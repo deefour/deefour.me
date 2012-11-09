@@ -1,0 +1,1 @@
+(function(e,t,n){"use strict";var r=e(document),i=t.Modernizr;i.touch&&!t.location.hash&&e(t).load(function(){setTimeout(function(){t.scrollTo(0,1)},0)}),e(function(){e(function(){e("h1").lettering("words",".").children("span").lettering()})})})(jQuery,this)

@@ -1,0 +1,37 @@
+{
+  "author": "Jason Daly",
+  "name": "deefour.me",
+  "description": "Jason Daly's personal website",
+  "version": "1.0.0",
+  "homepage": "http://deefour.me",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test"
+  },
+  "dependencies": {
+    "javascript-brunch": ">= 1.0 < 1.5",
+    "coffee-script-brunch": ">= 1.0 < 1.5",
+
+    "css-brunch": ">= 1.0 < 1.5",
+    "sass-brunch": ">= 1.4.1",
+    "compass-brunch": ">= 0.0.2",
+    "stylus-brunch": ">= 1.0 < 1.5",
+
+    "handlebars-brunch": ">= 1.0 < 1.5",
+
+    "uglify-js-brunch": ">= 1.0 < 1.5",
+    "clean-css-brunch": ">= 1.0 < 1.5"
+  },
+  "devDependencies": {
+    "chai": "1.2.0",
+    "sinon": "1.4.2",
+    "sinon-chai": "2.1.2"
+  }
+}

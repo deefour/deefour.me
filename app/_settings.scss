@@ -1,0 +1,64 @@
+$red: #DC322F;
+$yellow: #B58900;
+$orange: #CB4B16;
+$magenta: #D33682;
+$violete: #6C71C4;
+$blue: #268BD2;
+$cyan: #2AA198;
+$green: #859900;
+$black: #002B36;
+$grey: #e9e9e9;
+$highlight: #FFFF99;
+
+$mainColor: $red;
+$secondaryColor: $grey;
+$alertColor: $red;
+$successColor: $green;
+$txtColor: $black;
+$highlightColor: $highlight;
+
+$rowWidth: 580px;
+$columnGutter: 30px;
+$totalColumns: 12;
+$mobileTotalColumns: 4;
+
+$buttonRadius: 3px;
+$btnBase: 10px;
+$tinyBtnBase: $btnBase - 5;
+$smallBtnBase: $btnBase - 3;
+$largeBtnBase: $btnBase + 5;
+
+$headerFontFamily: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+$headerFontWeight: bold;
+$headerFontColor: #222;
+$bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$bodyFontWeight: normal;
+$bodyFontColor: $txtColor;
+
+$baseFontSize: 14px;
+$importantModNum: 44px;
+
+$formSpacing: 12px;
+
+$tabHeight: 40px;
+
+$navBarHeight: 40px;
+$navFlyoutBaseWidth: 250px;
+
+$thumbRadius: 3px;
+
+$hasTipBorderBottom: dotted 1px #ccc;
+$hasTipFontWeight: bold;
+$hasTipFontColor: #333;
+$hasTipBorderBottomHover: dotted 1px darken($mainColor, 20%);
+$hasTipFontColorHover: $mainColor;
+$tooltipBackgroundColor: #000;
+$tooltipBackgroundOpacity: 0.85;
+$tooltipFontSize: 12;
+$tooltipFontWeight: bold;
+$tooltipFontColor: #fff;
+$tapToCloseFontSize: 10;
+$tapToCloseFontWeight: normal;
+$tapToCloseFontColor: #888;
+$tooltipFontSizeScreenSmall: 14;
+$tooltipBackgroundOpacityScreenSmall: 0.85;
