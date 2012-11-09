@@ -1,6 +1,6 @@
 # Deefour.me
 
-My personal website.
+http://deefour.me - My personal website.
 
 (c) 2012 Jason Daly (jason@deefour.me)
 
