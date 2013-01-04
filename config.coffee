@@ -23,8 +23,6 @@ exports.config =
     stylesheets:
       joinTo:
         'stylesheets/app.css': /^(app|vendor)/
-      order:
-        before: ['vendor/styles/foundation.css']
 
     templates:
       joinTo: 'javascripts/app.js'
