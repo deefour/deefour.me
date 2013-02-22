@@ -25,6 +25,14 @@ The following packages/libraries/services have been used
   - [CloudFlare](https://cloudflare.com) for DNS
   - [Typekit](https://typekit.com) for headings
 
+## Installation
+
+The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the root of this repo as the current working directory.
+
+```bash
+s3cmd -P sync public/* s3://www.deefour.me
+```
+
 ### Version 1.0.0 - November 09 2012
 
 Initial project release
