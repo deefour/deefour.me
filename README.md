@@ -2,7 +2,7 @@
 
 http://deefour.me - My personal website.
 
-(c) 2012 Jason Daly (jason@deefour.me)
+(c) 2013 Jason Daly (jason@deefour.me)
 
 ## Description
 
@@ -13,17 +13,11 @@ Deefour.me is my personal online profile; a static site running on [Amazon S3](h
 The following packages/libraries/services have been used
 
   - [Brunch](http://brunch.io/)
-  - [Modernizr](http://modernizr.com/)
   - [Sass](http://sass-lang.com/)
-  - [Zurb Foundation](http://foundation.zurb.com/)
   - [Compass](http://compass-style.org/)
   - [s3cmd](http://s3tools.org/s3cmd) for deploys
-  - [jQuery](http://jquery.com/)
-  - [Lettering.js](https://github.com/deefour/lettering.js)
-  - [Underscore.js](http://underscorejs.org/)
   - [Amazon S3](http://aws.amazon.com/s3/) for hosting
   - [CloudFlare](https://cloudflare.com) for DNS
-  - [Typekit](https://typekit.com) for headings
 
 ## Installation
 
@@ -32,6 +26,10 @@ The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the
 ```bash
 s3cmd -P sync public/* s3://www.deefour.me
 ```
+
+### Version 2.0.0 - August 12 2013
+
+Removing a lot of dependencies; simplifying the design.
 
 ### Version 1.0.0 - November 09 2012
 
