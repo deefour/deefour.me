@@ -10,18 +10,17 @@ body {
   max-width: 450px;
 }
 
+code, mark {
+  padding: 0 3px;
+}
+
 code {
   font-family: "Courier New";
-  background: #EEE;
-  padding: 0 3px
+  background-color: #EEE;
 }
 
 mark {
   background-color: #FFA;
-}
-
-#so-badge {
-  float: right;
 }
 
 h1 {
@@ -30,4 +29,8 @@ h1 {
 
 a {
   white-space: nowrap;
+}
+
+#so-badge {
+  float: right;
 }
