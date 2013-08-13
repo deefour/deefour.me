@@ -13,10 +13,4 @@
     });
   }
 
-  $(function(){
-    $(function() {
-      $("h1").lettering('words', '.').children('span').lettering();
-    });
-  });
-
 })(jQuery, this);

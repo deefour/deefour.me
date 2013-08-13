@@ -18,14 +18,11 @@
   "dependencies": {
     "javascript-brunch": ">= 1.0 < 1.5",
     "coffee-script-brunch": ">= 1.0 < 1.5",
-
     "css-brunch": ">= 1.0 < 1.5",
     "sass-brunch": ">= 1.4.1",
     "compass-brunch": ">= 0.0.2",
     "stylus-brunch": ">= 1.0 < 1.5",
-
     "handlebars-brunch": ">= 1.0 < 1.5",
-
     "uglify-js-brunch": ">= 1.0 < 1.5",
     "clean-css-brunch": ">= 1.0 < 1.5"
   },

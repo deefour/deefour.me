@@ -5,6 +5,7 @@ exports.config =
     definition: false
   paths:
     compass: './config/compass.rb'
+    watched: ['app']
   files:
     javascripts:
       joinTo:
