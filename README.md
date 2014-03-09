@@ -2,7 +2,7 @@
 
 http://deefour.me - My personal website.
 
-(c) 2013 Jason Daly (jason@deefour.me)
+(c) 2013-2014 Jason Daly (jason@deefour.me)
 
 ## Description
 
@@ -29,7 +29,7 @@ The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the
 s3cmd -P sync public/* s3://www.deefour.me
 ```
 
-### Version 3.0.0 - March 9 2013
+### Version 3.0.0 - March 9 2014
 
 Changing build tool to gulp. New design.
 
