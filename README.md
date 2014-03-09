@@ -15,6 +15,7 @@ The following packages/libraries/services have been used
   - [Gulp](http://gulpjs.com/)
   - [Sass](http://sass-lang.com/)
   - [jQuery](http://jquery.com/)
+  - [normalize.css](http://necolas.github.io/normalize.css/)
   - [Compass](http://compass-style.org/)
   - [s3cmd](http://s3tools.org/s3cmd) for deploys
   - [Amazon S3](http://aws.amazon.com/s3/) for hosting

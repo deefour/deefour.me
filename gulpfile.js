@@ -42,17 +42,17 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('styles', function() {
-    gulp.src(paths.styles)
-        .pipe(compass({
-          sass: 'app/assets',
-          css: 'public',
-          require: [ 'compass-normalize' ],
-          bundle_exec: true
-        }))
-        .pipe(gutil.env.type === 'production' ? minifyCSS() : gutil.noop())
-        .pipe(gulp.dest('public'));
+  gulp.src(paths.styles)
+      .pipe(compass({
+        sass: 'app/assets',
+        css: 'public',
+        require: [ 'compass-normalize' ],
+        bundle_exec: true
+      }))
+      .pipe(gutil.env.type === 'production' ? minifyCSS() : gutil.noop())
+      .pipe(gulp.dest('public'));
 });
 
 
 
-gulp.task('default', ['scripts', 'styles', 'html', 'images', 'statics']);
+gulp.task('default', [ 'scripts', 'styles', 'html', 'images', 'statics' ]);

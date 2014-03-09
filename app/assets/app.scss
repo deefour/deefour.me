@@ -199,16 +199,6 @@ a {
   }
 }
 
-.cf:before,
-.cf:after {
-  content: " ";
-  display: table;
-}
-
-.cf:after{
-  clear: both;
-}
-
 #identity{
   clear: both;
 
@@ -236,6 +226,7 @@ a {
 .profiles{
   @include column-count(2);
   @include column-gap(20);
+  @include clearfix;
 
   margin: 0;
   padding: 0;
@@ -243,5 +234,31 @@ a {
 
   li {
     padding: 0 0 5px;
+  }
+}
+
+footer {
+  @include opacity(.8);
+
+  padding: 0 10px 10px;
+  font-size: 11px;
+  color: #444;
+
+  ul, li {
+    padding: 0;
+    margin: 0;
+  }
+
+  ul {
+    @include clearfix;
+  }
+
+  li {
+    display: inline-block;
+    float: left;
+
+    &:last-child {
+      float: right;
+    }
   }
 }
