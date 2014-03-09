@@ -1,3 +1,4 @@
-source 'http://rubygems.org'
+source "https://rubygems.org"
 
-gem 'compass'
+gem "compass"
+gem "compass-normalize"

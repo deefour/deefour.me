@@ -1,34 +1,39 @@
 {
-  "author": "Jason Daly",
-  "name": "deefour.me",
-  "description": "Jason Daly's personal website",
-  "version": "1.0.0",
-  "homepage": "http://deefour.me",
+  "name": "Deefour.me",
+  "version": "2.0.0",
+  "description": "Personal website for Jason Daly",
+  "main": "index.html",
+  "dev-dependencies": {
+    "gulp": "~3.5.5",
+    "gulp-compass": "~1.1.4",
+    "gulp-htmlmin": "~0.1.2",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-sass": "~0.7.1",
+    "gulp-uglify": "~0.2.1",
+    "gulp-util": "~2.2.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:deefour/deefour.me.git"
   },
-  "engines": {
-    "node": "~0.6.10 || 0.8 || 0.9"
+  "keywords": [
+    "jason",
+    "daly",
+    "deefour",
+    "website",
+    "portfolio"
+  ],
+  "author": "Jason Daly",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deefour/deefour.me/issues"
   },
-  "scripts": {
-    "start": "brunch watch --server",
-    "test": "brunch test"
-  },
+  "homepage": "https://github.com/deefour/deefour.me",
   "dependencies": {
-    "javascript-brunch": ">= 1.0 < 1.5",
-    "coffee-script-brunch": ">= 1.0 < 1.5",
-    "css-brunch": ">= 1.0 < 1.5",
-    "sass-brunch": ">= 1.4.1",
-    "compass-brunch": ">= 0.0.2",
-    "stylus-brunch": ">= 1.0 < 1.5",
-    "handlebars-brunch": ">= 1.0 < 1.5",
-    "uglify-js-brunch": ">= 1.0 < 1.5",
-    "clean-css-brunch": ">= 1.0 < 1.5"
-  },
-  "devDependencies": {
-    "chai": "1.2.0",
-    "sinon": "1.4.2",
-    "sinon-chai": "2.1.2"
+    "gulp-imagemin": "~0.1.5"
   }
 }
