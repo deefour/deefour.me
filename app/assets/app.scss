@@ -326,7 +326,7 @@ footer {
   }
 
   .project .tags li:nth-child(-n+3){
-   display: inline-block;
+    display: inline-block;
   }
 }
 
@@ -376,5 +376,13 @@ footer {
     float: none;
     display: list-item;
     padding: 3px 0;
+  }
+
+  .project .tags li:nth-child(-n+3){
+    display: none;
+  }
+
+  .project .tags li:nth-child(-n+2){
+    display: inline-block;
   }
 }
