@@ -8,7 +8,7 @@ html, body {
 }
 
 html {
-  background:rgb(82,106,124);
+  background:#242F37;
   @include background-image(radial-gradient(center, ellipse cover, rgba(82,106,124,1) 0%, rgba(0,0,0,1) 100%));
 
   background-attachment:fixed;
@@ -223,17 +223,21 @@ a {
   margin-right: 5px;
 }
 
-.profiles{
-  @include column-count(2);
-  @include column-gap(20);
+.profiles {
   @include clearfix;
 
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  width: 84%;
 
-  li {
-    padding: 0 0 5px;
+  ul {
+    width: 50%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      padding: 0 0 5px;
+    }
   }
 }
 
