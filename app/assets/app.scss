@@ -68,22 +68,6 @@ a {
   background: white;
 }
 
-#so-badge {
-  float: right;
-  width: 70px;
-  overflow: hidden;
-  position: relative;
-  height: 58px;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
-
-  img{
-    position: absolute;
-    right: -1px;
-    top: 0;
-  }
-}
-
 .project {
   @include border-radius(4px);
 
@@ -223,20 +207,52 @@ a {
   margin-right: 5px;
 }
 
-.profiles {
-  @include clearfix;
 
-  width: 84%;
+#find-me {
+  position: relative;
 
-  ul {
-    width: 50%;
-    float: left;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .profiles {
+    @include clearfix;
 
-    li {
-      padding: 0 0 5px;
+    width: 84%;
+
+    ul {
+      width: 50%;
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        padding: 0 0 5px;
+      }
+    }
+  }
+
+  .stack-exchange {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    margin-right: 10px;
+
+    h2 {
+      display: none;
+    }
+
+    #so-badge {
+      float: right;
+      width: 70px;
+      overflow: hidden;
+      position: relative;
+      height: 58px;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+
+      img{
+        position: absolute;
+        right: -1px;
+        top: 0;
+      }
     }
   }
 }
@@ -264,5 +280,101 @@ footer {
     &:last-child {
       float: right;
     }
+  }
+}
+
+
+
+
+
+/* 568 and less */
+@media only screen and (max-width: 568px) {
+  html, body {
+    background: white;
+  }
+
+  #wrapper {
+    @include border-radius(0);
+    @include box-shadow(none);
+
+    margin: 0;
+    width: 100%;
+    border: none;
+  }
+
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .project {
+    @include border-radius(0);
+
+    border-right: none;
+  }
+
+  #find-me {
+    padding: 0 10px;
+  }
+}
+
+
+/* 500 and less */
+@media only screen and (max-width: 500px) {
+  .project .tags li {
+    display: none;
+  }
+
+  .project .tags li:nth-child(-n+3){
+   display: inline-block;
+  }
+}
+
+
+
+/* 468 and less */
+@media only screen and (max-width: 468px) {
+  .project .repository {
+    position: static;
+    display: block;
+    padding-top: 5px;
+  }
+
+  #find-me {
+    .profiles ul {
+      float: none;
+      width: auto;
+    }
+
+    .stack-exchange {
+      position: static;
+      margin-right: 0;
+
+      h2 {
+        display: block;
+      }
+
+      #so-badge {
+        width: auto;
+        overflow: visible;
+        float: none;
+        position: static;
+        border: none;
+      }
+
+      #so-badge img {
+        position: static;
+      }
+    }
+  }
+}
+
+
+/* 440 and less */
+@media only screen and (max-width: 440px) {
+  footer li, footer li:last-child {
+    float: none;
+    display: list-item;
+    padding: 3px 0;
   }
 }
