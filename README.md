@@ -29,6 +29,10 @@ The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the
 s3cmd -P sync public/* s3://www.deefour.me
 ```
 
+### Version 3.0.2 - March 9 2014
+
+Responsive CSS.
+
 ### Version 3.0.1 - March 9 2014
 
 IE9 Support. Modernizr added.
