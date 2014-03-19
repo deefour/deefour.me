@@ -3,16 +3,16 @@
   "version": "3.0.2",
   "description": "Personal website for Jason Daly",
   "main": "index.html",
-  "dev-dependencies": {
+  "devDependencies": {
     "gulp": "~3.5.5",
     "gulp-compass": "~1.1.4",
     "gulp-htmlmin": "~0.1.2",
     "gulp-minify-css": "~0.3.0",
     "gulp-sass": "~0.7.1",
     "gulp-uglify": "~0.2.1",
-    "gulp-util": "~2.2.14"
+    "gulp-util": "~2.2.14",
+    "gulp-imagemin": "~0.1.5"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -32,8 +32,5 @@
   "bugs": {
     "url": "https://github.com/deefour/deefour.me/issues"
   },
-  "homepage": "https://github.com/deefour/deefour.me",
-  "dependencies": {
-    "gulp-imagemin": "~0.1.5"
-  }
+  "homepage": "https://github.com/deefour/deefour.me"
 }
