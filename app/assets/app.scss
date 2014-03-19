@@ -2,9 +2,10 @@
 @import "compass";
 
 html, body {
-  font: 13px/1.3 Verdana;
+  font: 14px/1.3 'Open Sans', Verdana, sans-serif;;
   margin: 0;
   padding: 0;
+  text-rendering: optimizeLegibility;
 }
 
 html {
