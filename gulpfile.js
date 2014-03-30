@@ -1,13 +1,19 @@
-var gulp      = require('gulp');
+// Deps
 var compass   = require('gulp-compass');
-var uglify    = require('gulp-uglify');
-var minifyCSS = require('gulp-minify-css');
+var fs        = require('fs');
+var gulp      = require('gulp');
 var gutil     = require('gulp-util');
 var htmlmin   = require('gulp-htmlmin');
-var imagemin = require('gulp-imagemin');
+var imagemin  = require('gulp-imagemin');
+var ini       = require('ini');
+var minifyCSS = require('gulp-minify-css');
+var template  = require('gulp-template');
+var uglify    = require('gulp-uglify');
 
 
 
+// Setup
+var env   = ini.parse(fs.readFileSync('./.env', 'utf-8'));
 var paths = {
   styles:  [ 'app/assets/**/*.scss' ],
   images:  [ 'app/assets/**/*.{png,gif,jpg,jpeg}' ],
@@ -18,6 +24,7 @@ var paths = {
 
 
 
+// Tasks
 gulp.task('statics', function () {
     gulp.src(paths.statics)
         .pipe(gulp.dest('public'));
@@ -31,7 +38,8 @@ gulp.task('images', function () {
 
 gulp.task('html', function() {
   gulp.src(paths.html)
-      .pipe(htmlmin({collapseWhitespace: true}))
+      .pipe(template({ env: env }, { interpolate: /{{([\s\S]+?)}}/g }))
+      .pipe(htmlmin({ collapseWhitespace: true }))
       .pipe(gulp.dest('public'))
 });
 
@@ -55,4 +63,5 @@ gulp.task('styles', function() {
 
 
 
+// Default Task
 gulp.task('default', [ 'scripts', 'styles', 'html', 'images', 'statics' ]);

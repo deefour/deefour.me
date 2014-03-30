@@ -4,3 +4,4 @@
 .ruby-version
 app/jason@deefour.me.pub
 .DS_Store
+/.env
