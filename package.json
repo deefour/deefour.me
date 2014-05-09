@@ -1,6 +1,6 @@
 {
   "name": "Deefour.me",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "Personal website for Jason Daly",
   "main": "index.html",
   "devDependencies": {
