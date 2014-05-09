@@ -1,6 +1,6 @@
 {
   "name": "Deefour.me",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Personal website for Jason Daly",
   "main": "index.html",
   "devDependencies": {
@@ -11,7 +11,9 @@
     "gulp-sass": "~0.7.1",
     "gulp-uglify": "~0.2.1",
     "gulp-util": "~2.2.14",
-    "gulp-imagemin": "~0.1.5"
+    "gulp-imagemin": "~0.1.5",
+    "ini": "^1.1.0",
+    "gulp-template": "^0.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
