@@ -72,8 +72,7 @@ gulp.task('styles', function() {
       precision: 3,
       sourcemap: 'none',
       loadPath: [].concat.apply([], [
-        require('node-bourbon').includePaths,
-        require('node-neat').includePaths
+        require('node-bourbon').includePaths
       ])
     }))
     .pipe($.autoprefixer('last 5 versions', 'ie 9'))
