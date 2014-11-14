@@ -275,14 +275,13 @@ a {
 }
 
 #label-interactive {
-  font-size: 10px;
-  padding: 10px;
+  font: 10px/2 $code-font;
+  padding: 8px 10px;
   background-color: #EEE;
   margin: 10px -10px 0;
   border: 1px solid #DDD;
   border-left: 0;
   border-right: 0;
-  font-family: $code-font;
 
   a {
     color: white;
@@ -292,6 +291,7 @@ a {
     border-radius: 3px;
     margin: 0 5px;
     border: 1px solid darken($color-label, 15%);
+    white-space: nowrap;
 
     &:hover {
       background-color: darken($color-label, 3%);
@@ -356,6 +356,10 @@ footer {
   #find-me {
     padding: 0 10px;
   }
+
+  #label-interactive {
+    margin: 10px -10px;
+  }
 }
 
 
@@ -381,9 +385,13 @@ footer {
   }
 
   #find-me {
-    .profiles ul {
-      float: none;
-      width: auto;
+    .profiles {
+      width: 100%;
+
+      ul {
+        float: none;
+        width: auto;
+      }
     }
 
     .stack-exchange {
@@ -406,6 +414,13 @@ footer {
         position: static;
       }
     }
+  }
+
+  #find-me,
+  #label-interactive,
+  header,
+  footer li {
+    text-align: center;
   }
 }
 
