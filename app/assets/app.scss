@@ -23,7 +23,6 @@ html, body {
   font: 14px/1.3 $copy-font;
   margin: 0;
   padding: 0;
-  text-rendering: optimizeLegibility;
 }
 
 html {
@@ -355,6 +354,10 @@ footer {
 
   #find-me {
     padding: 0 10px;
+
+    .stack-exchange {
+      right: 10px;
+    }
   }
 
   #label-interactive {
