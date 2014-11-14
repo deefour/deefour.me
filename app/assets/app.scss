@@ -13,7 +13,7 @@ $color-bg: #240F03;
 $color-label: #F77B00;
 
 $copy-font: 'Open Sans', Verdana, sans-serif;
-$code-font: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace;
+$code-font: Monaco, Consolas, Menlo, "Lucida Console", "Courier New", Courier, monospace;
 
 
 
@@ -381,10 +381,8 @@ footer {
 
 /* 468 and less */
 @media only screen and (max-width: 468px) {
-  .project .repository {
-    position: static;
-    display: block;
-    padding-top: 5px;
+  .project .repository .root {
+    display: none;
   }
 
   #find-me {
