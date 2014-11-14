@@ -1,14 +1,9 @@
 // Deps
-var compass   = require('gulp-compass');
-var fs        = require('fs');
-var gulp      = require('gulp');
-var gutil     = require('gulp-util');
-var htmlmin   = require('gulp-htmlmin');
-var imagemin  = require('gulp-imagemin');
-var ini       = require('ini');
-var minifyCSS = require('gulp-minify-css');
-var template  = require('gulp-template');
-var uglify    = require('gulp-uglify');
+var gulp     = require('gulp');
+var $        = require('gulp-load-plugins')();
+var argv     = require('yargs').argv;
+var fs       = require('fs');
+var ini      = require('ini');
 
 
 
@@ -30,38 +25,77 @@ gulp.task('statics', function () {
         .pipe(gulp.dest('public'));
 });
 
+
+
+// Image minifcation (production only) and relocation
+//
+// -----------------------------------------------------------------------------
 gulp.task('images', function () {
     gulp.src(paths.images)
-        .pipe(imagemin())
-        .pipe(gulp.dest('public'));
+    .pipe($.if(argv.production, $.imagemin({
+      optimizationLevel: 3,
+      progressive: true,
+      interlaced: true
+    })))
+    .pipe(gulp.dest('public'))
+    .pipe($.size());
 });
 
 gulp.task('html', function() {
   gulp.src(paths.html)
-      .pipe(template({ env: env }, { interpolate: /{{([\s\S]+?)}}/g }))
-      .pipe(htmlmin({ collapseWhitespace: true }))
+      .pipe($.template({ env: env }, { interpolate: /{{([\s\S]+?)}}/g }))
+      .pipe($.if(argv.production, $.htmlmin({ collapseWhitespace: true })))
       .pipe(gulp.dest('public'))
 });
 
+
+
+// Javascript
+//
+// -----------------------------------------------------------------------------
 gulp.task('scripts', function() {
-  gulp.src(paths.scripts)
-      .pipe(uglify())
-      .pipe(gulp.dest('public'))
+  return gulp.src(paths.scripts)
+    .pipe($.jshint())
+    .pipe($.jshint.reporter(require('jshint-stylish')))
+    .pipe($.if(argv.production, $.uglify()))
+    .pipe(gulp.dest('public'))
+    .pipe($.size());
 });
 
+
+
+// Stylesheets (Sass)
+//
+// -----------------------------------------------------------------------------
 gulp.task('styles', function() {
   gulp.src(paths.styles)
-      .pipe(compass({
-        sass: 'app/assets',
-        css: 'public',
-        require: [ 'compass-normalize' ],
-        bundle_exec: true
-      }))
-      .pipe(gutil.env.type === 'production' ? minifyCSS() : gutil.noop())
-      .pipe(gulp.dest('public'));
+    .pipe($.rubySass({
+      style: $.if(argv.production, 'compressed', 'nested'),
+      precision: 3,
+      sourcemap: 'none',
+      loadPath: [].concat.apply([], [
+        require('node-bourbon').includePaths,
+        require('node-neat').includePaths
+      ])
+    }))
+    .pipe($.autoprefixer('last 5 versions', 'ie 9'))
+    .pipe($.if(argv.production, $.csso()))
+    .pipe(gulp.dest('public'))
+    .pipe($.size());
+});
+
+
+
+// Cleanup from previous gulp runs
+//
+// -----------------------------------------------------------------------------
+gulp.task('clean', function(cb) {
+  del([
+    'public/assets'
+  ], cb);
 });
 
 
 
 // Default Task
-gulp.task('default', [ 'scripts', 'styles', 'html', 'images', 'statics' ]);
+gulp.task('default', [ 'clean', 'scripts', 'styles', 'html', 'images', 'statics' ]);

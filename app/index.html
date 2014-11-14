@@ -6,10 +6,8 @@
 
   <title>Jason Daly - Deefour.me</title>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
-
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css" rel="stylesheet">
-  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
   <link href="app.css" rel="stylesheet">
 </head>
@@ -23,29 +21,28 @@
 
     <section>
       <div id="projects">
+
         <div class="project php">
-          <h3>cfddns</h3>
-          <a class="repository github" href="https://github.com/deefour/cfddns">github.com/deefour/cfddns</a>
-          <p>After seeing the costs and caveats associated with dynamic dns services
-             like DynDNS, I learned I could leverage the <a class="context" href="https://cloudflare.com">CloudFlare</a> <a class="context" href="https://www.cloudflare.com/docs/client-api.html">API</a> to manage
-             a hostname for my home network, <strong>for free</strong>.</p>
+          <h3>Authorizer</h3>
+          <a class="repository github" href="https://github.com/deefour/authorizer">github.com/deefour/authorizer</a>
+          <p>Simple authorization via PHP classes. Inspired by <a class="context" href="https://github.com/elabs/pundit">elabs/<b>pundit</b></a>. Comes with </p>
           <ul class="tags">
             <li>PHP</li>
-            <li>CloudFlare</li>
-            <li>Dynamic DNS</li>
+            <li>Authorization</li>
+            <li>Laravel</li>
+            <li>PHPSpec</li>
           </ul>
         </div>
 
         <div class="project php">
-          <h3>Aide</h3>
-          <a class="repository github" href="https://github.com/deefour/aide">github.com/deefour/aide</a>
-          <p>A group of lightweight wrappers mostly around components of <a class="context" href="http://symfony.com">Symfony</a> and <a class="context" href="http://laravel.com">Laravel</a> to assist in Laravel &amp; <a class="context" href="http://silex.sensiolabs.org/">Silex</a> application development.</p>
+          <h3>Interactor</h3>
+          <a class="repository github" href="https://github.com/deefour/interactor">github.com/deefour/interactor</a>
+          <p>Simple service objects for PHP. Inspired by <a class="context" href="https://github.com/collectiveidea/interactor">collectiveidea/<b>interactor</b></a>.</p>
           <ul class="tags">
             <li>PHP</li>
+            <li>Service Objects</li>
             <li>Laravel</li>
-            <li>Symfony</li>
-            <li>Silex</li>
-            <li>Abstraction</li>
+            <li>PHPSpec</li>
           </ul>
         </div>
 
@@ -61,7 +58,7 @@
              <a class="context" href="http://wiki.nginx.org/Main">Nginx</a>,
              <a class="context" href="http://www.php.net/">PHP</a>,
              <a class="context" href="https://www.ruby-lang.org/en/">Ruby</a>,
-             <a class="context" href="https://github.com/sstephenson/rbenv">rbenv</a>, and more.</p>
+             <a class="context" href="https://github.com/postmodern/chruby">chruby</a>, and more.</p>
           <ul class="tags">
             <li>YAML</li>
             <li>Provisioning</li>
@@ -76,7 +73,7 @@
           <a class="repository github" href="https://github.com/deefour/dotfiles">github.com/deefour/dotfiles</a>
           <p>The dotfiles I use to make a working environment my own. Revolves around
              <a class="context" href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a>,
-             <a class="context" href="https://github.com/sstephenson/rbenv">rbenv</a>,
+             <a class="context" href="https://github.com/postmodern/chruby">chruby</a>,
              <a class="context" href="http://code.google.com/p/macvim/">macvim</a>, and
              <a class="context" href="http://www.vagrantup.com/">Vagrant</a>.</p>
           <ul class="tags">
@@ -87,13 +84,25 @@
           </ul>
         </div>
 
+        <div class="project php">
+          <h3>cfddns</h3>
+          <a class="repository github" href="https://github.com/deefour/cfddns">github.com/deefour/cfddns</a>
+          <p>After seeing the costs and caveats associated with dynamic dns services
+             like DynDNS, I learned I could leverage the <a class="context" href="https://cloudflare.com">CloudFlare</a> <a class="context" href="https://www.cloudflare.com/docs/client-api.html">API</a> to manage
+             a hostname for my home network, <strong>for free</strong>.</p>
+          <ul class="tags">
+            <li>PHP</li>
+            <li>CloudFlare</li>
+            <li>Dynamic DNS</li>
+          </ul>
+        </div>
+
         <div class="project javascript">
           <h3>ColorBand</h3>
           <a class="repository github" href="https://github.com/deefour/ColorBand">github.com/deefour/ColorBand</a>
           <p>A small <a class="context" href="http://jquery.com/">jQuery</a> <a class="context" href="http://plugins.jquery.com/colorband/">plugin</a> with unit tests via <a class="context" href="https://qunitjs.com/">Qunit</a> running on <a class="context" href="https://travis-ci.org/deefour/ColorBand/">Travis CI</a>, using the <code>&lt;canvas&gt;</code> tag to draw a multi-colored band atop an element.</p>
           <ul class="tags">
             <li>Javascript</li>
-            <li>Continuous Integration</li>
             <li>Unit Tests</li>
           </ul>
         </div>
@@ -133,7 +142,7 @@
     </footer>
   </div>
 
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="app.js"></script>
 
   <script>

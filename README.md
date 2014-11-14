@@ -6,7 +6,7 @@ http://deefour.me - My personal website.
 
 ## Description
 
-Deefour.me is my personal online profile; a static site running on [Amazon S3](http://aws.amazon.com/s3/) through their [static website hosting](http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html) built with [Gulp](http://gulpjs.com/).
+Deefour.me is my online profile; a static site running on [Amazon S3](http://aws.amazon.com/s3/) through their [static website hosting](http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html) built with [Gulp](http://gulpjs.com/).
 
 ## Code Used
 
@@ -29,6 +29,9 @@ The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the
 s3cmd -P sync public/* s3://www.deefour.me
 ```
 
+### Version 3.3.0 - November 13 2014
+
+Added content for [deefour/interactor](https://github.com/deefour/interactor) and [deefour/authorizer](https://github.com/deefour/authorizer).
 
 ### Version 3.2.0 - May 9 2014
 
