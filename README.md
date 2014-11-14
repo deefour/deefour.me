@@ -31,7 +31,7 @@ s3cmd -P sync public/* s3://www.deefour.me
 
 ### Version 3.3.0 - November 13 2014
 
-Added content for [deefour/interactor](https://github.com/deefour/interactor) and [deefour/authorizer](https://github.com/deefour/authorizer).
+Adding content for [deefour/interactor](https://github.com/deefour/interactor) and [deefour/authorizer](https://github.com/deefour/authorizer). Rewriting `gulpfile.js`.
 
 ### Version 3.2.0 - May 9 2014
 

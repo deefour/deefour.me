@@ -1,6 +1,21 @@
 @import "bourbon";
 @import "neat";
 
+
+
+// Sass Variables
+// -----------------------------------------------------------------------------
+$php: #7F00F4;
+$javascript: #F45400;
+$yaml: #FFBF1E;
+$shell: #0092F4;
+$link: #2D1F3B;
+$bg: #240F03;
+
+
+
+// App Styling
+// -----------------------------------------------------------------------------
 html, body {
   font: 14px/1.3 'Open Sans', Verdana, sans-serif;;
   margin: 0;
@@ -9,9 +24,8 @@ html, body {
 }
 
 html {
-  background:#242F37;
-  @include background-image(radial-gradient(center, ellipse cover, rgba(82,106,124,1) 0%, rgba(0,0,0,1) 100%));
-
+  background:#222;
+  @include background-image(radial-gradient(center, ellipse cover, #3D3D3D 0%, #222 100%));
   background-attachment:fixed;
   background-position:center center;
   background-repeat:no-repeat;
@@ -56,13 +70,11 @@ ul {
 }
 
 a {
-  color: #2d862f;
+  color: $link;
 }
 
 #wrapper {
-  @include border-radius(4px);
-  @include box-shadow(5px 5px 10px rgba(0, 0, 150, 0.25));
-
+  border-radius: 4px;
   overflow: hidden;
   margin: 40px auto;
   width: 540px;
@@ -71,28 +83,13 @@ a {
 }
 
 .project {
-  @include border-radius(4px);
-
+  border-radius: 4px;
   border: 1px solid #CCC;
   border-left: 5px solid #AAA;
   padding: 5px 10px;
   position: relative;
   margin: 0 0 10px;
   background: #FAFAFA;
-
-  &.coming-soon {
-    .coming-soon-tag {
-      @include opacity(.7);
-
-      position: absolute;
-      bottom: 8px;
-      left: 10px;
-      display: block;
-      width: 87px;
-      height: 11px;
-      background-image: url(coming-soon.png);
-    }
-  }
 
   &:nth-child(even) {
     background-color: #f4f4f4;
@@ -103,19 +100,46 @@ a {
   }
 
   &.php {
-    border-left-color: #7F00F4;
+    border-left-color: $php;
+
+    .current-release {
+      background-color: $php;
+    }
   }
 
   &.javascript {
-    border-left-color: #F45400;
+    border-left-color: $javascript;
+
+    .current-release {
+      background-color: $javascript;
+    }
   }
 
   &.yaml {
-    border-left-color: #F4D700;
+    border-left-color: $yaml;
+
+    .current-release {
+      background-color: $yaml;
+    }
   }
 
   &.shell {
-    border-left-color: #0092F4;
+    border-left-color: $shell;
+
+    .current-release {
+      background-color: $shell;
+    }
+  }
+
+  .current-release {
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: Monaco, Consolas,"Lucida Console",monospace;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
   }
 
   .repository, code{
@@ -123,7 +147,7 @@ a {
   }
 
   code, .tags li{
-    @include border-radius(2px);
+    border-radius: 2px;
   }
 
   code {
@@ -163,24 +187,14 @@ a {
     padding: 2px 5px;
     background: #EAEAEA;
   }
-
-  &:hover {
-    background: #EEE;
-
-    .tags li, code{
-      background: #E0E0E0;
-    }
-  }
 }
 
 .context {
-  color: #333;
-  background-color: rgba(45, 134, 47, 0.1);
+  background-color: #E8E8E8;
   text-decoration: none;
 
   &:hover {
-    color: #000;
-    background-color: rgba(45, 134, 47, 0.15);
+    background-color: #DDD;
     text-decoration: underline;
   }
 }
@@ -196,13 +210,12 @@ a {
 
 .tags li .fa,
 .repository .fa{
-  @include opacity(.5);
-
+  opacity: .5;
   color: black;
 }
 
 .repository:hover .fa {
-  @include opacity(1);
+  opacity: 1;
 }
 
 .fa {
@@ -242,7 +255,7 @@ a {
 
     #so-badge {
       float: right;
-      width: 70px;
+      width: 73px;
       overflow: hidden;
       position: relative;
       height: 58px;
@@ -259,8 +272,7 @@ a {
 }
 
 footer {
-  @include opacity(.8);
-
+  opacity: .8;
   padding: 0 10px 10px;
   font-size: 11px;
   color: #444;
@@ -295,9 +307,8 @@ footer {
   }
 
   #wrapper {
-    @include border-radius(0);
-    @include box-shadow(none);
-
+    box-shadow: none;
+    border-radius: 0;
     margin: 0;
     width: 100%;
     border: none;
@@ -309,8 +320,7 @@ footer {
   }
 
   .project {
-    @include border-radius(0);
-
+    border-radius: 0;
     border-right: none;
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "Deefour.me",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Personal website for Jason Daly",
   "keywords": [ "jason", "daly", "deefour", "website", "portfolio" ],
   "homepage": "https://github.com/deefour/deefour.me",
@@ -16,16 +16,19 @@
     "url": "git@github.com:deefour/deefour.me.git"
   },
   "devDependencies": {
+    "del": "^0.1.3",
     "gulp": "~3.8.10",
     "gulp-autoprefixer": "~1.0.1",
     "gulp-csso": "~0.2.6",
     "gulp-htmlmin": "~0.2.0",
     "gulp-if": "~1.2.5",
+    "gulp-imagemin": "~1.2.1",
+    "gulp-jshint": "~1.5.3",
+    "gulp-load-plugins": "~0.5.0",
     "gulp-ruby-sass": "git://github.com/sindresorhus/gulp-ruby-sass.git",
     "gulp-size": "~1.1.0",
-    "gulp-uglify": "~1.0.1",
-    "gulp-imagemin": "~1.2.1",
     "gulp-template": "^1.1.1",
+    "gulp-uglify": "~1.0.1",
     "ini": "^1.1.0",
     "jshint-stylish": "~1.0.0",
     "yargs": "~1.3.3"

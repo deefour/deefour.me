@@ -1,5 +1,11 @@
-// Deps
+'use strict';
+
+// Dependencies
+//
+// -----------------------------------------------------------------------------
+
 var gulp     = require('gulp');
+var del      = require('del');
 var $        = require('gulp-load-plugins')();
 var argv     = require('yargs').argv;
 var fs       = require('fs');
@@ -16,14 +22,6 @@ var paths = {
   html:    [ 'app/**/*.html' ],
   statics: [ 'app/**/*.{txt,pub}' ]
 };
-
-
-
-// Tasks
-gulp.task('statics', function () {
-    gulp.src(paths.statics)
-        .pipe(gulp.dest('public'));
-});
 
 
 
@@ -70,7 +68,7 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
   gulp.src(paths.styles)
     .pipe($.rubySass({
-      style: $.if(argv.production, 'compressed', 'nested'),
+      style: 'nested',
       precision: 3,
       sourcemap: 'none',
       loadPath: [].concat.apply([], [
@@ -82,6 +80,16 @@ gulp.task('styles', function() {
     .pipe($.if(argv.production, $.csso()))
     .pipe(gulp.dest('public'))
     .pipe($.size());
+});
+
+
+
+// Extra static assets
+//
+// -----------------------------------------------------------------------------
+gulp.task('statics', function () {
+    gulp.src(paths.statics)
+        .pipe(gulp.dest('public'));
 });
 
 
