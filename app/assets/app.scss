@@ -4,19 +4,23 @@
 
 // Sass Variables
 // -----------------------------------------------------------------------------
-$php: #7F00F4;
-$javascript: #F45400;
-$yaml: #FFBF1E;
-$shell: #0092F4;
-$link: #2D1F3B;
-$bg: #240F03;
+$color-php: #7F00F4;
+$color-javascript: #F45400;
+$color-yaml: #FFBF1E;
+$color-shell: #0092F4;
+$color-link: #2D1F3B;
+$color-bg: #240F03;
+$color-label: #F77B00;
+
+$copy-font: 'Open Sans', Verdana, sans-serif;
+$code-font: Monaco, Consolas, "Lucida Console", "Courier New", Courier, monospace;
 
 
 
 // App Styling
 // -----------------------------------------------------------------------------
 html, body {
-  font: 14px/1.3 'Open Sans', Verdana, sans-serif;;
+  font: 14px/1.3 $copy-font;
   margin: 0;
   padding: 0;
   text-rendering: optimizeLegibility;
@@ -69,7 +73,7 @@ ul {
 }
 
 a {
-  color: $link;
+  color: $color-link;
 }
 
 #wrapper {
@@ -99,34 +103,34 @@ a {
   }
 
   &.php {
-    border-left-color: $php;
+    border-left-color: $color-php;
 
     .current-release {
-      background-color: $php;
+      background-color: $color-php;
     }
   }
 
   &.javascript {
-    border-left-color: $javascript;
+    border-left-color: $color-javascript;
 
     .current-release {
-      background-color: $javascript;
+      background-color: $color-javascript;
     }
   }
 
   &.yaml {
-    border-left-color: $yaml;
+    border-left-color: $color-yaml;
 
     .current-release {
-      background-color: $yaml;
+      background-color: $color-yaml;
     }
   }
 
   &.shell {
-    border-left-color: $shell;
+    border-left-color: $color-shell;
 
     .current-release {
-      background-color: $shell;
+      background-color: $color-shell;
     }
   }
 
@@ -135,14 +139,14 @@ a {
     font-size: 10px;
     padding: 2px 5px;
     border-radius: 3px;
-    font-family: Monaco, Consolas,"Lucida Console",monospace;
+    font-family: $code-font;
     position: absolute;
     bottom: 5px;
     left: 10px;
   }
 
   .repository, code{
-    font: 12px/1.3 "Courier New", Courier, monospace;
+    font: 12px/1.3 $code-font;
   }
 
   code, .tags li{
@@ -266,6 +270,32 @@ a {
         right: -1px;
         top: 0;
       }
+    }
+  }
+}
+
+#label-interactive {
+  font-size: 10px;
+  padding: 10px;
+  background-color: #EEE;
+  margin: 10px -10px 0;
+  border: 1px solid #DDD;
+  border-left: 0;
+  border-right: 0;
+  font-family: $code-font;
+
+  a {
+    color: white;
+    background-color: $color-label;
+    text-decoration: none;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin: 0 5px;
+    border: 1px solid darken($color-label, 15%);
+
+    &:hover {
+      background-color: darken($color-label, 3%);
+      border-color: darken($color-label, 18%);
     }
   }
 }
