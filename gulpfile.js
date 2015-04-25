@@ -4,12 +4,12 @@
 //
 // -----------------------------------------------------------------------------
 
-var gulp     = require('gulp');
-var del      = require('del');
-var $        = require('gulp-load-plugins')();
-var argv     = require('yargs').argv;
-var fs       = require('fs');
-var ini      = require('ini');
+var gulp = require('gulp');
+var del  = require('del');
+var $    = require('gulp-load-plugins')();
+var argv = require('yargs').argv;
+var fs   = require('fs');
+var ini  = require('ini');
 
 
 
