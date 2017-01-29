@@ -6,28 +6,21 @@ http://deefour.me - My personal website.
 
 ## Description
 
-Deefour.me is my online profile; a static site running on [Amazon S3](http://aws.amazon.com/s3/) through their [static website hosting](http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html) built with [Gulp](http://gulpjs.com/).
+Deefour.me is my online profile; a static site running on [Amazon S3](http://aws.amazon.com/s3/) through their [static website hosting](http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html) built with [Webpack](https://webpack.js.org/).
 
-## Code Used
-
-The following packages/libraries/services have been used
-
-  - [Gulp](http://gulpjs.com/)
-  - [Sass](http://sass-lang.com/)
-  - [jQuery](http://jquery.com/)
-  - [normalize.css](http://necolas.github.io/normalize.css/)
-  - [Bourbon](http://bourbon.io/)
-  - [s3cmd](http://s3tools.org/s3cmd) for deploys
-  - [Amazon S3](http://aws.amazon.com/s3/) for hosting
-  - [CloudFlare](https://cloudflare.com) for DNS
+The current iteration of the site fills the background with a grid of eight-pixel cells given random opacity. One hundred seeds are applied to the grid and [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) plays out.
 
 ## Installation
 
 The following [`s3cmd`](http://s3tools.org/s3cmd) command should be run with the root of this repo as the current working directory.
 
 ```bash
-s3cmd -P sync public/* s3://www.deefour.me
+s3cmd -P sync dist/* s3://www.deefour.me
 ```
+
+### Version 4.0.0 - January 29, 2017
+
+Swapping gulp out for a small webpack setup. A much simpler page with [Conways' Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) displayed on a full-page canvas in the background.
 
 ### Version 3.3.0 - November 13 2014
 
