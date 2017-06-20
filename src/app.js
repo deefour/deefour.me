@@ -6,7 +6,7 @@ const $content = document.querySelector('div');
 
 document.body.appendChild($canvas);
 
-const FPS = 6;
+const FPS = 3;
 const MIN_ALPHA = 0.02;
 const MAX_ALPHA = 0.07;
 const ACTIVE_ALPHA = 0.05;
