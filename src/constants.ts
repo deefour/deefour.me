@@ -1,0 +1,12 @@
+export const FPS = 3;
+export const MIN_ALPHA = 0.02;
+export const MAX_ALPHA = 0.07;
+export const ACTIVE_ALPHA = 0.05;
+export const CELL_SIZE = 8;
+export const CELL_PAD = 1;
+export const SEEDS = 100;
+export const SEED_SIZE = 9;
+export const KEEPALIVE = [2, 3];
+export const REPRODUCE = [3];
+export const FADE_SCALE = 1.75;
+export const DEBOUNCE = 50;

@@ -1,5 +1,6 @@
-html, body {
-  font: 14px/1.3 "Source Sans Pro";
+html,
+body {
+  font: 14px/1.3 'Source Sans Pro';
   background: white;
   height: 100%;
   overflow: hidden;
@@ -31,14 +32,15 @@ h1 {
   font-size: 2rem;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
 p {
-   margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 ul {
@@ -57,14 +59,14 @@ li:last-child {
 
 a {
   white-space: nowrap;
-  padding: .2rem .5rem;
+  padding: 0.2rem 0.5rem;
   display: block;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
 }
 
 a:hover {
-  background: rgba(0, 0, 0, .05);
-  border-radius: .2rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 0.2rem;
 }
 
 canvas {
