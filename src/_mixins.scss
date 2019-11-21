@@ -1,0 +1,31 @@
+@import './_variables.scss';
+
+@mixin md {
+  @media print, screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen {
+  @media screen {
+    @content;
+  }
+}
+
+@media print {
+  .screen-only {
+    display: none;
+  }
+}
+
+@mixin link-color($color) {
+  color: $color;
+
+  &:hover {
+    color: darken($color, $link-hover-amount);
+  }
+}
+
+@mixin subdued {
+  opacity: .75;
+}

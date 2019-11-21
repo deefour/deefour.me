@@ -1,1 +1,14 @@
-@import '~/normalize.css/normalize.css';
+@import '~normalize.css/normalize';
+@import './_variables.scss';
+@import './_mixins.scss';
+
+a {
+  @include link-color($link-color);
+  font-weight: 600;
+
+  @media screen {
+    &:visited {
+      @include link-color($link-visited-color);
+    }
+  }
+}
