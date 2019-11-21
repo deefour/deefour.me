@@ -2,7 +2,7 @@ $link-color: #2574a9;
 $link-hover-amount: 10%;
 
 @mixin md {
-  @media screen and (min-width: 768px) {
+  @media print, screen and (min-width: 768px) {
     @content;
   }
 }
