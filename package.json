@@ -2,13 +2,14 @@
   "name": "deefour.me",
   "version": "5.0.0",
   "description": "My website.",
-  "main": "src/index.html",
+  "main": "src/index.pug",
   "scripts": {
-    "assets:build": "yarn parcel build src/index.html",
-    "assets:watch": "yarn parcel src/index.html",
-    "syntax:format": "yarn prettier --write './**/*.{js,ts,css,json}'",
-    "syntax:check": "yarn tsc --noEmit --project .",
-    "syntax:lint": "yarn syntax:check && yarn tslint -c tslint.json './**/*.ts' -t stylish"
+    "clean": "yarn del-cli {dist,.cache}",
+    "build": "yarn parcel build src/index.pug",
+    "watch": "yarn parcel src/index.pug",
+    "format": "yarn prettier --write '{./*,./src/**/*}.{js,ts,css,json}'",
+    "check": "yarn tsc --noEmit --project .",
+    "lint": "yarn check && yarn tslint -c tslint.json './**/*.ts' -t stylish"
   },
   "repository": {
     "type": "git",
@@ -24,9 +25,17 @@
   },
   "homepage": "https://deefour.me",
   "devDependencies": {
-    "parcel-bundler": "^1.9.7",
-    "prettier": "^1.14.2",
-    "tslint": "^5.11.0",
-    "typescript": "^3.0.3"
+    "autoprefixer": "^9.7.2",
+    "del-cli": "^3.0.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
+    "pug": "^2.0.4",
+    "sass": "^1.23.7",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "normalize.css": "^8.0.1"
   }
 }

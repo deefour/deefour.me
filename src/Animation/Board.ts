@@ -87,7 +87,11 @@ export default class Board {
   }
 
   public seeds() {
-    const seed = [[0, 1, 0], [0, 1, 0], [0, 1, 0]];
+    const seed = [
+      [0, 1, 0],
+      [0, 1, 0],
+      [0, 1, 0],
+    ];
 
     for (let n = 0; n < SEEDS; n++) {
       const row = Math.floor(Math.random() * this.rows());
