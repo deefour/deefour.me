@@ -25,7 +25,7 @@
   },
   "homepage": "https://deefour.me",
   "devDependencies": {
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^9.7.3",
     "del-cli": "^3.0.0",
     "parcel-bundler": "^1.12.4",
     "prettier": "^1.19.1",
