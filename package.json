@@ -32,7 +32,7 @@
     "pug": "^2.0.4",
     "sass": "^1.23.7",
     "tslint": "^5.20.1",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.3"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
