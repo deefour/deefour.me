@@ -1,22 +1,24 @@
+import Cell from './Cell';
+
 export default class State {
   constructor(protected state = []) {
     //
   }
 
-  public alive() {
+  public alive(): Cell[] {
     return this.all().filter(cell => cell.isAlive());
   }
 
-  public all() {
+  public all(): Cell[] {
     return this.state.reduce((acc, row) => acc.concat(row), []);
   }
 
-  public set(row, column, cell) {
+  public set(row, column, cell): void {
     this.state[row] = this.state[row] || [];
     this.state[row][column] = cell;
   }
 
-  public get(row, column) {
+  public get(row, column): Cell | null {
     if (!Array.isArray(this.state[row]) || !this.state[row][column]) {
       return null;
     }
@@ -24,11 +26,7 @@ export default class State {
     return this.state[row][column];
   }
 
-  public has(row, column) {
-    return;
-  }
-
-  public apply(callback) {
+  public apply(callback): void {
     for (let i = 0; i < this.state.length; i++) {
       for (let j = 0; j < this.state[i].length; j++) {
         callback.call(this, this.get(i, j), i, j);
@@ -36,7 +34,7 @@ export default class State {
     }
   }
 
-  public neighborsOf(cell) {
+  public neighborsOf(cell): Cell[] {
     const neighbors = [];
 
     for (let i = -1; i <= 1; i++) {

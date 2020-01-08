@@ -1,3 +1,4 @@
+import debounce from 'lodash/debounce';
 import { FPS, DEBOUNCE } from './constants';
 import Board from './Animation/Board';
 import './index.scss';
@@ -10,29 +11,8 @@ document.body.appendChild($canvas);
 let board = null;
 
 let then = Date.now();
-const startTime = then;
 
-const debounce = (func, wait) => {
-  let timeout;
-
-  return function() {
-    const args = arguments;
-    const later = () => {
-      timeout = null;
-
-      func.apply(this, args);
-    };
-
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-
-    if (!timeout) {
-      func.apply(this, args);
-    }
-  };
-};
-
-const animate = () => {
+const animate = (): void => {
   requestAnimationFrame(animate);
 
   const now = Date.now();

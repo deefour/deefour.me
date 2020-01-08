@@ -40,7 +40,7 @@ export default class Board {
     return this;
   }
 
-  public refresh() {
+  public refresh(): this {
     this.cachedContent = null;
 
     for (let i = 0; i < this.rows(); i++) {
@@ -56,15 +56,15 @@ export default class Board {
     return this;
   }
 
-  public rows() {
+  public rows(): number {
     return Math.ceil(this.height / (CELL_SIZE + CELL_PAD));
   }
 
-  public columns() {
+  public columns(): number {
     return Math.ceil(this.width / (CELL_SIZE + CELL_PAD));
   }
 
-  public seed() {
+  public seed(): this {
     for (let n = 0; n < SEEDS; n++) {
       const row = Math.floor(Math.random() * this.rows());
       const column = Math.floor(Math.random() * this.columns());
@@ -77,7 +77,7 @@ export default class Board {
           const cell = this.state.get(row + i, column + j);
 
           if (cell) {
-            cell.alive = Math.random() < 0.5;
+            cell.setVitality(Math.random() < 0.5);
           }
         }
       }
@@ -86,7 +86,7 @@ export default class Board {
     return this;
   }
 
-  public seeds() {
+  public seeds(): this {
     const seed = [
       [0, 1, 0],
       [0, 1, 0],
@@ -102,7 +102,7 @@ export default class Board {
           const cell = this.state.get(row + i, column + j);
 
           if (cell) {
-            cell.alive = seed[i + 1][j + 1] === 1;
+            cell.setVitality(seed[i + 1][j + 1] === 1);
           }
         }
       }
@@ -111,15 +111,15 @@ export default class Board {
     return this;
   }
 
-  public tick() {
+  public tick(): this {
     const state = new State();
 
     this.state.apply(cell => {
       const neighbors = this.state.neighborsOf(cell).filter(c => c.isAlive())
         .length;
 
-      const keepAlive = () => cell.isAlive() && KEEPALIVE.includes(neighbors);
-      const keepDead = () => cell.isDead() && !REPRODUCE.includes(neighbors);
+      const keepAlive = (): boolean => cell.isAlive() && KEEPALIVE.includes(neighbors);
+      const keepDead = (): boolean => cell.isDead() && !REPRODUCE.includes(neighbors);
 
       if (keepAlive() || keepDead()) {
         state.set(cell.row, cell.column, cell);

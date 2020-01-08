@@ -33,8 +33,6 @@ export default class Cell {
   }
 
   public color(): string {
-    const red = this.isAlive() ? 255 : 0;
-
     return `rgba(0, 0, 0, ${this.opacity()})`;
   }
 
@@ -60,6 +58,18 @@ export default class Cell {
 
   public isAlive(): boolean {
     return this.alive;
+  }
+
+  public resurrect(): void {
+    this.alive = true;
+  }
+
+  public kill(): void {
+    this.alive = false;
+  }
+
+  public setVitality(spare: boolean): void {
+    spare ? this.resurrect() : this.kill();
   }
 
   public isDead(): boolean {
