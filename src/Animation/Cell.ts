@@ -4,8 +4,12 @@ import {
   MAX_ALPHA,
   MIN_ALPHA,
   ACTIVE_ALPHA,
+  COLOR_CHANCE,
+  COLORS,
 } from '../constants';
 import Board from './Board';
+
+const COLOR_VALUES = Object.values(COLORS);
 
 export default class Cell {
   protected alpha: number;
@@ -33,7 +37,20 @@ export default class Cell {
   }
 
   public color(): string {
-    return `rgba(0, 0, 0, ${this.opacity()})`;
+    // should the cell be colored?
+    const inColor = Math.random() <= COLOR_CHANCE;
+
+    let colorRGB = COLORS.comment; // default
+
+    if (this.isAlive()) {
+      colorRGB = COLORS.cyan;
+    } else if (inColor) {
+      colorRGB = COLOR_VALUES[Math.floor(Math.random() * COLOR_VALUES.length)];
+    }
+
+    const [r, g, b] = colorRGB;
+
+    return `rgba(${r}, ${g}, ${b}, ${this.opacity()})`;
   }
 
   public opacity(): number {
