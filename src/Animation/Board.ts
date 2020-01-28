@@ -118,8 +118,10 @@ export default class Board {
       const neighbors = this.state.neighborsOf(cell).filter(c => c.isAlive())
         .length;
 
-      const keepAlive = (): boolean => cell.isAlive() && KEEPALIVE.includes(neighbors);
-      const keepDead = (): boolean => cell.isDead() && !REPRODUCE.includes(neighbors);
+      const keepAlive = (): boolean =>
+        cell.isAlive() && KEEPALIVE.includes(neighbors);
+      const keepDead = (): boolean =>
+        cell.isDead() && !REPRODUCE.includes(neighbors);
 
       if (keepAlive() || keepDead()) {
         state.set(cell.row, cell.column, cell);
