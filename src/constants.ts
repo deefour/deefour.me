@@ -1,7 +1,7 @@
 export const FPS = 5;
-export const MIN_ALPHA = 0.04;
-export const MAX_ALPHA = 0.09;
-export const ACTIVE_ALPHA = 0.12;
+export const MIN_ALPHA = 0.06;
+export const MAX_ALPHA = 0.11;
+export const ACTIVE_ALPHA = 0.14;
 export const CELL_SIZE = 8;
 export const CELL_PAD = 1;
 export const SEEDS = 100;
