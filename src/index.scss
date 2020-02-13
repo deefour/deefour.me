@@ -53,7 +53,6 @@ body {
   }
 
   h1 {
-    font-family: 'Bree Serif';
     font-weight: 900;
     margin: 0;
     padding: 0;
@@ -61,36 +60,10 @@ body {
   }
 }
 
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-p {
-  margin: 1rem 0;
-}
-
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-li {
-  margin-right: 1rem;
-}
-
-li:last-child {
-  margin-right: 0;
-}
-
-a {
-  white-space: nowrap;
-  padding: 0.2rem 0.5rem;
-  display: block;
-  margin-bottom: 0.3rem;
+h1,
+h2,
+h3 {
+  font-family: 'Bree Serif';
 }
 
 canvas {
@@ -98,4 +71,117 @@ canvas {
   top: 0;
   left: 0;
   z-index: 5;
+}
+
+.who-am-i {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  li:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    white-space: nowrap;
+    padding: 0.2rem 0.5rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.projects {
+  opacity: 0.75;
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  article {
+    line-height: 1.15;
+    background: #fff;
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 0.25rem;
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 2px 2px 0 rgba(150, 150, 150, 0.5);
+
+    header {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      a.details {
+        $icon-size: 1rem;
+
+        width: $icon-size;
+        height: $icon-size;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 0;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+
+        &.details--octocat {
+          background-image: url('./icon-octocat.svg');
+        }
+
+        &.details--scheduler {
+          background-image: url('./icon-scheduler.png');
+        }
+      }
+    }
+
+    h3,
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    section {
+      p {
+        font-weight: 600;
+        margin: 0.5rem 0;
+      }
+    }
+
+    footer {
+      p {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
+    }
+
+    h3 {
+      color: rgba(0, 0, 0, 0.65);
+      line-height: 1;
+      font-size: 1.1rem;
+    }
+  }
 }
