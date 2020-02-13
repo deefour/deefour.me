@@ -1,26 +1,55 @@
 extends layout.pug
 
 block content
-  div
-    .hi-there
-      .me
-      h1 Hi. I'm Jason.
 
-    p I build web applications, mostly with PHP and JavaScript.
+  .container
+    .who-am-i
+      .hi-there
+        .me
+        h1 Hi. I'm Jason.
 
-    ul
-      li
-        a(href="https://github.com/deefour") Github
-      li
-        a(href="https://www.linkedin.com/in/deefour") LinkedIn
-      li
-        a(href="http://stackoverflow.com/users/605707/deefour") StackOverflow
-      li
-        a(href="mailto:jason@deefour.me") Email
-      li
-        a(href="./resume.pug") Resume
-      li
-        a(href="jason@deefour.me.pub") Public Key
+      p I build web applications, mostly with PHP and JavaScript.
+
+      ul
+        li
+          a(href="https://github.com/deefour") Github
+        li
+          a(href="https://www.linkedin.com/in/deefour") LinkedIn
+        li
+          a(href="http://stackoverflow.com/users/605707/deefour") StackOverflow
+        li
+          a(href="mailto:jason@deefour.me") Email
+        li
+          a(href="./resume.pug") Resume
+        li
+          a(href="jason@deefour.me.pub") Public Key
+
+    .projects
+      h2 Recent Projects
+
+      .project
+        h3
+          a(href="https://www.theconferencescheduler.com") The Conference Scheduler
+        p.summary Security-focused, available-everywhere, live-updating schedule management built for schools.
+        p.colophon
+          | #[a(href="https://laravel.com") Laravel] application and JSON API.
+          | Hosted on #[a(href="https://www.digitalocean.com") DigitalOcean].
+          | Deployment via #[a(href="https://www.ansible.com") Ansible].
+          | Runing on #[a(href="https://docs.docker.com/engine/swarm/") Docker Swarm].
+          | Assets built by #[a(href="https://webpack.js.org/") webpack] &amp; served by #[a(href="https://aws.amazon.com/cloudfront/") Amazon CloudFront].
+
+      .project
+        .with-source-code
+          h3
+            a(href="https://hooptie.deefour.me") Find My Hooptie
+          a(href="https://github.com/deefour/hooptie" class="view-source") Find My Hooptie - On Github
+
+        p.summary Tiny vehicle listing aggregator with the ability to favorite and permanently dismiss results. This app helps me keep track of vehicles I'm interested in.
+        p.colophon
+          | #[a(href="https://vuejs.org/") Vue.js] SPA.
+          | Hosted on #[a(href="https://www.netlify.com/") Netlify].
+          | Data fetched via Google's #[a(href="https://firebase.google.com/products/functions/") Cloud Functions for Firebase] &amp; stored in #[a(href="https://firebase.google.com/products/firestore") Cloud Firestore].
+          | Built with #[a(href="https://parceljs.org/") parcel.js].
 
 block scripts
   script(src="./index.ts")

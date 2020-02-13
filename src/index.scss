@@ -17,8 +17,9 @@ body {
   text-align: center;
 }
 
-div {
-  max-width: 100%;
+.container {
+  width: 100%;
+  max-width: 35rem;
   z-index: 10;
 }
 
@@ -52,7 +53,6 @@ div {
   }
 
   h1 {
-    font-family: 'Bree Serif';
     font-weight: 900;
     margin: 0;
     padding: 0;
@@ -60,36 +60,10 @@ div {
   }
 }
 
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-p {
-  margin: 1rem 0;
-}
-
-ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-li {
-  margin-right: 1rem;
-}
-
-li:last-child {
-  margin-right: 0;
-}
-
-a {
-  white-space: nowrap;
-  padding: 0.2rem 0.5rem;
-  display: block;
-  margin-bottom: 0.3rem;
+h1,
+h2,
+h3 {
+  font-family: 'Bree Serif';
 }
 
 canvas {
@@ -97,4 +71,113 @@ canvas {
   top: 0;
   left: 0;
   z-index: 5;
+}
+
+.who-am-i {
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  li:last-child {
+    margin-right: 0;
+  }
+
+  a {
+    white-space: nowrap;
+    padding: 0.2rem 0.5rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+}
+
+.projects {
+  opacity: 0.75;
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .project {
+    line-height: 1.15;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 0.25rem;
+    text-align: left;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    .with-source-code {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+
+      .view-source {
+        $octocat-size: 1rem;
+
+        background-image: url('./octocat.svg');
+        width: $octocat-size;
+        height: $octocat-size;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 0;
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        opacity: 0.75;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    h3,
+    p {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    p.summary {
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    p.colophon {
+      font-size: 0.85rem;
+      opacity: 0.85;
+    }
+
+    h3 {
+      color: rgba(0, 0, 0, 0.65);
+      line-height: 1;
+    }
+  }
 }
