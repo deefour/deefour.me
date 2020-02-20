@@ -1,10 +1,15 @@
-import debounce from 'lodash/debounce';
-import { FPS, DEBOUNCE } from './constants';
-import Board from './Animation/Board';
 import './index.scss';
 
+import { DEBOUNCE, FPS } from './constants';
+
+import Board from './Animation/Board';
+import debounce from 'lodash/debounce';
+
+// preload the hover-state profile
+new Image().src = require('./awesome.svg');
+
 const $canvas = document.createElement('canvas');
-const $content = document.querySelector('div');
+const $content = document.querySelector('#container');
 
 document.body.appendChild($canvas);
 
@@ -26,9 +31,9 @@ const animate = (): void => {
 };
 
 window.addEventListener('load', () => {
-  board = new Board($canvas, $content);
-
-  board.resize(document.body.clientWidth, document.body.clientHeight).refresh();
+  board = new Board($canvas, $content)
+    .resize(document.body.clientWidth, document.body.clientHeight)
+    .refresh();
 
   animate();
 });

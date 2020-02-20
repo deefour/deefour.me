@@ -17,8 +17,9 @@ body {
   text-align: center;
 }
 
-div {
-  max-width: 100%;
+#container {
+  width: 100%;
+  max-width: 35rem;
   z-index: 10;
 }
 

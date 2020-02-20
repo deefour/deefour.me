@@ -1,16 +1,23 @@
 import {
-  CELL_SIZE,
+  ACTIVE_ALPHA,
   CELL_PAD,
+  CELL_SIZE,
+  COLORS,
+  COLOR_CHANCE,
   MAX_ALPHA,
   MIN_ALPHA,
-  ACTIVE_ALPHA,
-  COLOR_CHANCE,
-  COLORS,
 } from '../constants';
+
 import Board from './Board';
 
 const COLOR_VALUES = Object.values(COLORS);
 
+/**
+ * A Cell represents a single block on the Board.
+ *
+ * It's opacity is randomly determined during instantiation. When 'alive', its
+ * color will standout from neighboring 'dead' Cells.
+ */
 export default class Cell {
   protected alpha: number;
   protected size = CELL_SIZE;
@@ -21,8 +28,8 @@ export default class Cell {
 
   constructor(
     protected board: Board,
-    protected row: number,
-    protected column: number
+    public readonly row: number,
+    public readonly column: number
   ) {
     this.alpha = Math.random() * (MAX_ALPHA - MIN_ALPHA) + MIN_ALPHA;
     this.x = this.column * (this.size + this.pad);
@@ -67,7 +74,7 @@ export default class Cell {
     );
 
     if (distance < content.radius()) {
-      alpha *= distance / content.radius();
+      alpha = Math.max(0.04, alpha * Math.pow(distance / content.radius(), 4));
     }
 
     return alpha;

@@ -1,15 +1,19 @@
-import State from './State';
-import Content from './Content';
-import Cell from './Cell';
 import {
-  CELL_SIZE,
   CELL_PAD,
-  SEED_SIZE,
-  SEEDS,
+  CELL_SIZE,
   KEEPALIVE,
   REPRODUCE,
+  SEEDS,
+  SEED_SIZE,
 } from '../constants';
 
+import Cell from './Cell';
+import Content from './Content';
+import State from './State';
+
+/**
+ * Board represents the canvas itself.
+ */
 export default class Board {
   protected state: State;
   protected context: CanvasRenderingContext2D;
@@ -25,12 +29,17 @@ export default class Board {
     this.context = this.$canvas.getContext('2d');
   }
 
+  /**
+   * Content instance getter for the main content div.
+   *
+   * @return {Content}
+   */
   public content(): Content {
     return (this.cachedContent =
-      this.cachedContent || new Content(this.$content));
+      this.cachedContent ?? new Content(this.$content));
   }
 
-  public resize(width, height): this {
+  public resize(width: number, height: number): this {
     this.width = width;
     this.height = height;
 
@@ -41,16 +50,23 @@ export default class Board {
   }
 
   public refresh(): this {
+    // require the next call to content() instantiate a new Content instance
     this.cachedContent = null;
 
+    // help garbage collect Cells currently on the board
+    this.state.flush();
+
+    // build up new Cells to use
     for (let i = 0; i < this.rows(); i++) {
       for (let j = 0; j < this.columns(); j++) {
         this.state.set(i, j, new Cell(this, i, j));
       }
     }
 
+    // make some cells 'alive'
     this.seed();
 
+    // draw everything.
     this.state.apply(cell => cell.draw(this.context));
 
     return this;
@@ -111,6 +127,13 @@ export default class Board {
     return this;
   }
 
+  /**
+   * On each tick of the animation, a new State will be created and filled with
+   * cells.
+   *
+   * Cells that need to be killed or revitalized are cloned before being modified
+   * and injected into the new State.
+   */
   public tick(): this {
     const state = new State();
 
