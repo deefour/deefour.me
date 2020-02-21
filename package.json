@@ -9,7 +9,7 @@
     "watch": "yarn parcel src/index.pug",
     "format": "yarn prettier --write '{./*,./src/**/*}.{js,ts,scss,css,json}'",
     "check": "yarn tsc --noEmit --project .",
-    "lint": "yarn check && yarn eslint . --ext .ts"
+    "lint": "yarn check && yarn eslint . --ext .ts && yarn stylelint '**/*.scss' -s scss"
   },
   "repository": {
     "type": "git",
@@ -41,8 +41,10 @@
     "pretty-quick": "^2.0.1",
     "pug": "^2.0.4",
     "sass": "^1.25.0",
+    "stylelint": "^13.2.0",
+    "stylelint-scss": "^3.14.2",
     "tslint": "^6.0.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
