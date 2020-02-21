@@ -13,7 +13,7 @@ const $content = document.querySelector('#container');
 
 document.body.appendChild($canvas);
 
-let board = null;
+let board = undefined;
 let then = Date.now();
 let isPlaying = true;
 
@@ -48,7 +48,7 @@ window.addEventListener(
   'resize',
   debounce(() => {
     board
-      .resize(document.body.clientWidth, document.body.clientHeight)
+      ?.resize(document.body.clientWidth, document.body.clientHeight)
       .refresh();
 
     animate();
