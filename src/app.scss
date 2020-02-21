@@ -4,6 +4,7 @@
 
 a {
   @include link-color($link-color);
+
   font-weight: 600;
 
   @media screen {
