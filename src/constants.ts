@@ -116,7 +116,7 @@ export const REPRODUCE = [3];
 /**
  * Cap for the frame rate
  */
-export const FPS = 60;
+export const FPS = 12;
 
 /**
  * how long the animation should run (in seconds)
