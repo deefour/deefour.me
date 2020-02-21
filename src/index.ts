@@ -1,6 +1,6 @@
 import './index.scss';
 
-import { DEBOUNCE, FPS } from './constants';
+import { DEBOUNCE, FPS, RUNTIME } from './constants';
 
 import Board from './Animation/Board';
 import debounce from 'lodash/debounce';
@@ -14,10 +14,16 @@ const $content = document.querySelector('#container');
 document.body.appendChild($canvas);
 
 let board = null;
-
 let then = Date.now();
+let isPlaying = true;
+
+setTimeout(() => (isPlaying = false), RUNTIME * 1000);
 
 const animate = (): void => {
+  if (!isPlaying) {
+    return;
+  }
+
   requestAnimationFrame(animate);
 
   const now = Date.now();

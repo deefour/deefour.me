@@ -5,27 +5,27 @@ import {
   REPRODUCE,
   SEEDS,
   SEED_SIZE,
+  SEED_TEMPLATE,
+  SEED_VITALITY,
 } from '../constants';
 
 import Cell from './Cell';
 import Content from './Content';
-import State from './State';
 
 /**
  * Board represents the canvas itself.
  */
 export default class Board {
-  protected state: State;
   protected context: CanvasRenderingContext2D;
   protected width: number;
   protected height: number;
   protected cachedContent: Content;
+  protected cells = [];
 
   constructor(
     protected $canvas: HTMLCanvasElement,
     protected $content: Element
   ) {
-    this.state = new State();
     this.context = this.$canvas.getContext('2d');
   }
 
@@ -53,13 +53,13 @@ export default class Board {
     // require the next call to content() instantiate a new Content instance
     this.cachedContent = null;
 
-    // help garbage collect Cells currently on the board
-    this.state.flush();
+    // empty the cells array
+    this.cells.splice(0, this.cells.length);
 
     // build up new Cells to use
     for (let i = 0; i < this.rows(); i++) {
       for (let j = 0; j < this.columns(); j++) {
-        this.state.set(i, j, new Cell(this, i, j));
+        this.set(i, j, new Cell(this, i, j));
       }
     }
 
@@ -67,7 +67,7 @@ export default class Board {
     this.seed();
 
     // draw everything.
-    this.state.apply(cell => cell.draw(this.context));
+    this.cells.forEach(cell => cell.draw(this.context));
 
     return this;
   }
@@ -90,10 +90,10 @@ export default class Board {
 
       for (let i = 0; i <= rows; i++) {
         for (let j = 0; j <= columns; j++) {
-          const cell = this.state.get(row + i, column + j);
+          const cell = this.get(row + i, column + j);
 
           if (cell) {
-            cell.setVitality(Math.random() < 0.5);
+            cell.setVitality(Math.random() < SEED_VITALITY);
           }
         }
       }
@@ -102,67 +102,74 @@ export default class Board {
     return this;
   }
 
-  public seeds(): this {
-    const seed = [
-      [0, 1, 0],
-      [0, 1, 0],
-      [0, 1, 0],
-    ];
-
-    for (let n = 0; n < SEEDS; n++) {
-      const row = Math.floor(Math.random() * this.rows());
-      const column = Math.floor(Math.random() * this.columns());
-
-      for (let i = -1; i <= 1; i++) {
-        for (let j = -1; j <= 1; j++) {
-          const cell = this.state.get(row + i, column + j);
-
-          if (cell) {
-            cell.setVitality(seed[i + 1][j + 1] === 1);
-          }
-        }
-      }
-    }
-
-    return this;
-  }
-
-  /**
-   * On each tick of the animation, a new State will be created and filled with
-   * cells.
-   *
-   * Cells that need to be killed or revitalized are cloned before being modified
-   * and injected into the new State.
-   */
   public tick(): this {
-    const state = new State();
+    const actionsQueue = [];
 
-    this.state.apply(cell => {
-      const neighbors = this.state.neighborsOf(cell).filter(c => c.isAlive())
-        .length;
+    this.cells.forEach((cell: Cell) => {
+      const livingNeighborsCount = this.neighborsOf(cell).filter(c =>
+        c.isAlive()
+      ).length;
 
-      const keepAlive = (): boolean =>
-        cell.isAlive() && KEEPALIVE.includes(neighbors);
-      const keepDead = (): boolean =>
-        cell.isDead() && !REPRODUCE.includes(neighbors);
-
-      if (keepAlive() || keepDead()) {
-        state.set(cell.row, cell.column, cell);
-
+      if (cell.isAlive() && KEEPALIVE.includes(livingNeighborsCount)) {
+        // keep the cell alive
         return;
       }
 
-      const copy = cell.clone();
+      if (cell.isDead() && !REPRODUCE.includes(livingNeighborsCount)) {
+        // keep the cell dead
+        return;
+      }
 
-      copy.alive = !copy.alive;
-
-      state.set(cell.row, cell.column, copy);
-
-      copy.draw(this.context);
+      actionsQueue.push({
+        cell,
+        action: cell.isAlive() ? 'kill' : 'resurrect',
+      });
     });
 
-    this.state = state;
+    actionsQueue.forEach(({ cell, action }) => {
+      cell[action].call(cell);
+      cell.draw(this.context);
+    });
 
     return this;
+  }
+
+  public toIndex(row: number, column: number): number {
+    return column + row * this.columns();
+  }
+
+  public set(row, column, cell): void {
+    this.cells[this.toIndex(row, column)] = cell;
+  }
+
+  public get(row, column): Cell | undefined {
+    return this.cells?.[this.toIndex(row, column)];
+  }
+
+  /**
+   * Collect the neighboring cells around the one passed. If 'o' below is the passed
+   * Cell, an array of Cells marked as 'x' below will be returned.
+   *
+   *   x x x
+   *   x o x
+   *   x x x
+   *
+   * @param {Cell} cell the cell to collect neighbors for
+   * @return {Cell[]}
+   */
+  public neighborsOf(cell: Cell): Cell[] {
+    const neighbors: Cell[] = [];
+
+    for (let i = -1; i <= 1; i++) {
+      for (let j = -1; j <= 1; j++) {
+        const neighbor = this.get(cell.row + i, cell.column + j);
+
+        if (neighbor && neighbor !== cell) {
+          neighbors.push(neighbor);
+        }
+      }
+    }
+
+    return neighbors;
   }
 }

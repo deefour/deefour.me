@@ -99,8 +99,4 @@ export default class Cell {
   public isDead(): boolean {
     return !this.isAlive();
   }
-
-  public clone(): this {
-    return Object.assign(Object.create(this), this);
-  }
 }
