@@ -2,7 +2,11 @@
 
 html,
 body {
-  font: 14px/1.3 'Source Sans Pro', sans-serif;
+  font: 12px/1.3 'Source Sans Pro', sans-serif;
+
+  @media print {
+    font-size: 11.5px;
+  }
 }
 
 body {
@@ -103,6 +107,19 @@ h1 {
   flex-flow: row wrap;
   justify-content: center;
   list-style-type: none;
+
+  @media print {
+    a.print-link {
+      width: 0px;
+      overflow: hidden;
+      font-size: 0;
+
+      &::after {
+        font-size: 1rem;
+        content: attr(href);
+      }
+    }
+  }
 
   li {
     margin: 0 1rem 0.5rem;
