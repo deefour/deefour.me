@@ -33,7 +33,11 @@ mixin experience(title, company, url, location, startDate, endDate)
 block vars
   - var pageTitle =  "Resume";
 
+
 block content
+  .download-or-print.screen-only
+    p #[b Need a copy of this resume?] #[a(href="./jason-daly-resume.pdf") Download a PDF version] or print this page.
+
   .wrapper
     h1 Jason Daly
       br

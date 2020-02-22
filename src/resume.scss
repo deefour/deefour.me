@@ -9,10 +9,6 @@ body {
   }
 }
 
-body {
-  padding: 0 1rem;
-}
-
 @include md {
   section {
     border-left: 0.25rem solid rgba(black, 0.05);
@@ -81,9 +77,28 @@ h1 {
   }
 }
 
+.download-or-print {
+  padding: 1rem;
+  text-align: center;
+  font-weight: 600;
+  background-color: rgba($color-accent, 0.06);
+  border-bottom: 1px solid rgba($color-accent, 0.6);
+
+  b {
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+}
+
 .wrapper {
   max-width: 768px;
   margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .summary {
