@@ -37,7 +37,7 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "pug": "^3.0.0",
-    "sass": "^1.26.8",
+    "sass": "^1.26.9",
     "stylelint": "^13.6.0",
     "stylelint-scss": "^3.17.2",
     "typescript": "^3.9.5"
