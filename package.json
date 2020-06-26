@@ -39,7 +39,7 @@
     "pug": "^3.0.0",
     "sass": "^1.26.9",
     "stylelint": "^13.6.0",
-    "stylelint-scss": "^3.17.2",
+    "stylelint-scss": "^3.18.0",
     "typescript": "^3.9.5"
   },
   "dependencies": {
