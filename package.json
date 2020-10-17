@@ -25,7 +25,7 @@
   },
   "homepage": "https://deefour.me",
   "devDependencies": {
-    "@babel/core": "^7.11.6",
+    "@babel/core": "^7.12.3",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
     "@typescript-eslint/parser": "^2.34.0",
     "autoprefixer": "^9.8.6",
