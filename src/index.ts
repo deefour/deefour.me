@@ -1,5 +1,3 @@
-import './index.scss';
-
 import { DEBOUNCE, FPS, RUNTIME } from './constants';
 
 import Board from './Animation/Board';

@@ -3,9 +3,9 @@
   "version": "5.0.0",
   "description": "My website.",
   "scripts": {
-    "clean": "yarn del-cli {dist,.cache}",
-    "build": "yarn parcel build src/index.pug",
-    "watch": "yarn parcel src/index.pug",
+    "clean": "yarn del-cli {dist,.cache,.parcel-cache}",
+    "build": "yarn clean && yarn parcel build src/index.pug src/resume.pug",
+    "watch": "yarn parcel src/index.pug src/resume.pug",
     "format": "yarn prettier --write '{*,src/**/*}.{js,ts,scss,css,json}'",
     "check": "yarn tsc --noEmit --project .",
     "lint": "yarn check && yarn eslint . --ext .ts && yarn stylelint '**/*.scss' -s scss"

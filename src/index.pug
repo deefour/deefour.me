@@ -19,7 +19,7 @@ block content
         li
           a(href="mailto:jason@deefour.me") Email
         li
-          a(href="./resume.pug") Resume
+          a(href="resume.pug") Resume
         li
           a(href="jason@deefour.me.pub") Public Key
 
@@ -60,6 +60,9 @@ block content
             | Hosted on #[a(href="https://www.netlify.com/") Netlify].
             | Data fetched via Google's #[a(href="https://firebase.google.com/products/functions/") Cloud Functions for Firebase] &amp; stored in #[a(href="https://firebase.google.com/products/firestore") Cloud Firestore].
             | Built with #[a(href="https://parceljs.org/") parcel.js].
+
+block styles
+  link(rel="stylesheet", href="./index.scss")
 
 block scripts
   script(src="./index.ts")
