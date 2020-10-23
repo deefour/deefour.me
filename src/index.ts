@@ -3,10 +3,10 @@ import './index.scss';
 import { DEBOUNCE, FPS, RUNTIME } from './constants';
 
 import Board from './Animation/Board';
-import debounce from 'lodash/debounce';
+import debounce from 'lodash.debounce';
 
 // preload the hover-state profile
-new Image().src = require('./awesome.svg');
+new Image().src = require('url:./awesome.svg');
 
 const $canvas = document.createElement('canvas');
 const $content = document.querySelector('#container');
