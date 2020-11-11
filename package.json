@@ -24,7 +24,7 @@
   },
   "homepage": "https://deefour.me",
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^10.0.2",
     "del-cli": "^3.0.1",
     "eslint": "^7.11.0",
     "eslint-config-prettier": "^6.11.0",
