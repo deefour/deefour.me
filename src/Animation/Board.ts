@@ -5,7 +5,6 @@ import {
   REPRODUCE,
   SEEDS,
   SEED_SIZE,
-  SEED_TEMPLATE,
   SEED_VITALITY,
 } from '../constants';
 
@@ -138,11 +137,11 @@ export default class Board {
     return column + row * this.columns();
   }
 
-  public set(row, column, cell): void {
+  public set(row: number, column: number, cell: number): void {
     this.cells[this.toIndex(row, column)] = cell;
   }
 
-  public get(row, column): Cell | undefined {
+  public get(row: number, column: number): Cell | undefined {
     return this.cells?.[this.toIndex(row, column)];
   }
 

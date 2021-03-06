@@ -36,7 +36,7 @@ export default class Cell {
     this.y = this.row * (this.size + this.pad);
   }
 
-  public draw(context): void {
+  public draw(context: CanvasRenderingContext2D): void {
     context.fillStyle = this.color();
 
     context.clearRect(this.x, this.y, this.size, this.size);
