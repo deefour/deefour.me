@@ -29,7 +29,7 @@
     "acorn": "^8.0.5",
     "autoprefixer": "^10.0.1",
     "del-cli": "^3.0.1",
-    "eslint": "^7.21.0",
+    "eslint": "^7.24.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.3.0",
     "parcel": "^2.0.0-nightly.429",
