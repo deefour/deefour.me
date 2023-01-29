@@ -1,4 +1,4 @@
-@import './_mixins.scss';
+@import './mixins';
 
 html,
 body {
@@ -11,7 +11,7 @@ body {
 
 @include md {
   section {
-    border-left: 0.25rem solid rgba(black, 0.05);
+    border-left: 0.25rem solid rgba(0 0 0 / 5%);
     padding-left: 1rem;
     margin-bottom: 3rem;
   }
@@ -103,7 +103,7 @@ h1 {
 
 .summary {
   text-align: center;
-  border-bottom: 1px dashed rgba(black, 0.15);
+  border-bottom: 1px dashed rgba(0 0 0 / 15%);
   margin-bottom: 2rem;
 
   @include md {
@@ -116,7 +116,7 @@ h1 {
 }
 
 .where-to-find-me {
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   padding: 0;
   display: flex;
   flex-flow: row wrap;
@@ -125,7 +125,7 @@ h1 {
 
   @media print {
     a.print-link {
-      width: 0px;
+      width: 0;
       overflow: hidden;
       font-size: 0;
 
@@ -167,14 +167,14 @@ h1 {
     @media screen {
       padding: 0.4rem 0.5rem;
       border-radius: 0.25rem;
-      background: rgba(black, 0.05);
+      background: rgba(0 0 0 / 5%);
     }
   }
 }
 
 .experience {
   + .experience {
-    border-top: 1px dashed rgba(black, 0.15);
+    border-top: 1px dashed rgba(0 0 0 / 15%);
     padding-top: 2rem;
     margin-top: 2rem;
   }

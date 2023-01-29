@@ -41,7 +41,7 @@ block content
   .wrapper
     h1 Jason Daly
       br
-      span Full Stack Web Developer
+      span Full Stack Software Engineer
 
     ul.where-to-find-me.info-links
       li
@@ -59,9 +59,11 @@ block content
 
     .summary
 
-      p Equally versed in PHP, JavaScript, CSS, and HTML. Competent in many other languages and technologies. RedHat/CentOS sysadmin experience.
+      p I am well versed in PHP, JavaScript, CSS, and HTML, and competent in many other languages and technologies.
 
-      p Worked on projects for big brands in the advertising, e-commerce, and education spaces. Currently building and maintaining ordering and inventory management services for a multi-billion dollar retailer in New England.
+      p I have experience working for for big advertising and e-commerce brands, and earlier experience in the education space.
+
+      p I currently lead and manage engineering for a fintech startup. and previously built ordering and inventory management services for a multi-billion dollar retailer in New England.
 
       p.standout
         b I am perpetually eager to learn and love solving problems through code.
@@ -69,12 +71,24 @@ block content
     +section("Skills")
 
       ul.skills
-        each val in ['Caddy', 'Ansible', 'AWS', 'Apache', 'PHP', 'Redis', 'Docker', 'Capistrano', 'Vagrant', 'MariaDB', 'MySQL', 'HTML5', 'CSS', 'SASS', 'Gulp.js', 'Node.js', 'Webpack', "Ruby", "Laravel", "Vuex", 'Babel', 'TypeScript', 'Vue.js', 'JavaScript', 'Git', 'CentOS', 'Redhat', 'MacOS', 'Azure'].sort((a, b) =>  a.localeCompare(b, 'en', { sensitivity: 'base' }))
+        each val in ['Caddy', 'Ansible', 'AWS', 'PHP', 'Redis', 'Docker', 'MariaDB', 'MySQL', 'HTML5', 'CSS', 'SASS', 'Tailwind', 'Gulp.js', 'Node.js', "Ruby", "Laravel", "Vuex", 'Babel', 'TypeScript', 'Vue.js', 'JavaScript', 'Git', 'CentOS', 'MacOS'].sort((a, b) =>  a.localeCompare(b, 'en', { sensitivity: 'base' }))
           li= val
 
     +section("Experience")
 
-      +experience("Lead Developer", "Label Interactive", "http://labelinteractive.com", "Southbury, CT", "November 2013")
+      +experience("Lead Engineer & Engineering Manager", "Lendflow", "https://lendflow.com", "Austin, TX", "May 2021")
+        p Originally hired as a Senior Software Engineer, #[strong I currently act as the team lead and manager for the engineering team].
+
+        ul
+          li Architected the automated underwriting process used both internally and by SaaS customers to reduce the time from application to offer.
+          li Architected the ability for a deal's lifecycle to be customized based on customer and market fit. This was a fundamental rewrite around how Lendflow processes deals toward funding.
+          li Supported the migration of deal and client history from a legacy application to today's product.
+          li Standardized how Lendflow interacts with all (~35+ and counting) 3rd party API's. Wrote middleware used by both Lendflow's external facing API and internal tooling to log #[strong every] request and response, validate and rate limit 3rd party API calls, and more.
+          li Successfully migrated from PHP 7 to 8.1, Laravel 7 to 8, and currently support migrations from Laravel 8 to 9 and Vue CLI to Vite.
+          li Helped grow the tech team from ~10 to ~30 in one year, helping define process around interviews, onboarding, and team makeup & responsibilities.
+          li Responsible for defining quarterly KPI's for the engineering team and individuals, holding all accountable toward improvement of metrics like sprint velocity, cycle time, time to initial code review, and reporting regular progress around those goals to the CTO.
+
+      +experience("Lead Developer", "Label Interactive", "http://labelinteractive.com", "Southbury, CT", "November 2013", "May 2021")
         p
           b Lead developer for a digital interactive agency.
 
@@ -100,9 +114,9 @@ block content
 
         p Created dozens of shorter lifespan, high traffic sweepstakes, instant-win contests, micro-sites, and other unique projects for name brand companies.
 
-      +experience("Owner & Lead Developer", "The Conference Scheduler", "https://www.theconferencescheduler.com", null, "February 2019")
+      +experience("Owner & Lead Developer", "The Conference Scheduler (currently unavailable)", "https://www.theconferencescheduler.com", null, "February 2019", "October 2022")
         p
-          b My side project; how I learn and stay current.
+          b A side project; how I learned and stayed current.
           |  The Conference Scheduler is security-focused, available-everywhere, live-updating schedule management built for schools. It aims to make creating and managing parent-teacher conferences easier for administrators, teachers, and parents.
 
         ul

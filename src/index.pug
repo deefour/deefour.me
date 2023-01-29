@@ -23,30 +23,8 @@ block content
         li
           a(href="jason@deefour.me.pub") Public Key
 
-    .projects
-      h2 Personal Projects
-      p I create things in my free time to learn and stay current.
-
-      article
-        header
-          h3
-            a(href="https://www.theconferencescheduler.com") The Conference Scheduler
-          a(href="https://www.theconferencescheduler.com" class="details details--scheduler") The Conference Scheduler website
-
-        section
-          p Security-focused, available-everywhere, live-updating schedule management built for schools.
-
-        footer
-          p
-            | #[a(href="https://laravel.com") Laravel] application and JSON API.
-            | Hosted on #[a(href="https://www.digitalocean.com") DigitalOcean].
-            | Deployment via #[a(href="https://www.ansible.com") Ansible].
-            | CI/CD via #[a(href="https://circleci.com") CircleCI].
-            | Developed with #[a(href="https://vagrantup.com") Vagrant].
-            | Assets built by #[a(href="https://webpack.js.org/") webpack] &amp; served by #[a(href="https://aws.amazon.com/cloudfront/") Amazon CloudFront].
-
 block styles
   link(rel="stylesheet", href="./index.scss")
 
 block scripts
-  script(src="./index.ts")
+  script(src="./index.ts" type="module")

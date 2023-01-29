@@ -8,7 +8,7 @@
     "watch": "yarn parcel src/index.pug src/resume.pug",
     "format": "yarn prettier --write '{*,src/**/*}.{js,ts,scss,css,json}'",
     "check": "yarn tsc --noEmit --project .",
-    "lint": "yarn check && yarn eslint . --ext .ts && yarn stylelint '**/*.scss' -s scss"
+    "lint": "yarn check && yarn eslint . --ext .ts && yarn stylelint '**/*.scss'"
   },
   "repository": {
     "type": "git",
@@ -18,28 +18,31 @@
     "deefour"
   ],
   "author": "Jason Daly <jason@deefour.me>",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/deefour/deefour.me/issues"
   },
   "homepage": "https://deefour.me",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.16.1",
-    "@typescript-eslint/parser": "^4.16.1",
+    "@parcel/transformer-pug": "2.8.3",
+    "@parcel/transformer-sass": "2.8.3",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
     "acorn": "^8.0.5",
     "autoprefixer": "^10.0.1",
-    "del-cli": "^3.0.1",
-    "eslint": "^7.21.0",
-    "eslint-config-prettier": "^6.11.0",
-    "husky": "^4.3.0",
-    "parcel": "^2.0.0-nightly.429",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
+    "parcel": "^2.8.3",
     "postcss": "^8.1.3",
     "prettier": "^2.1.1",
     "pretty-quick": "^3.0.0",
     "pug": "^3.0.0",
     "sass": "^1.26.10",
-    "stylelint": "^13.7.0",
-    "stylelint-scss": "^3.18.0",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0",
     "typescript": "^4.0.2"
   },
   "dependencies": {
